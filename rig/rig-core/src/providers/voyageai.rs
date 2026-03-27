@@ -136,7 +136,8 @@ pub struct EmbeddingResponse {
 
 #[derive(Clone, Debug, Deserialize)]
 pub struct Usage {
-    pub prompt_tokens: usize,
+    #[serde(default)]
+    pub prompt_tokens: Option<usize>,
     pub total_tokens: usize,
 }
 
